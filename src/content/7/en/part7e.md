@@ -133,6 +133,8 @@ class App extends React.Component {
       anecdotes: [],
       current: 0
     }
+  
+    this.handleClick = this.handleClick.bind(this) // highlight-line
   }
 
   componentDidMount = () => {
@@ -200,6 +202,8 @@ const App = () => {
 ```
 
 In the case of our example the differences were minor. The biggest difference between Functional components and Class components is mainly that the state of a Class component is a single object, and that the state is updated using the method _setState_, while in Functional components the state can consist of multiple different variables, with all of them having their own update function.
+  
+Within the constructor for the App component, there is also an additional method, 'this.handleClick = this.handleClick.bind(this)'. If the method is not bound, when the button is clicked, the method will be undefined.
 
 In some more advanced use cases the effect hook offers a considerably better mechanism for controlling side effects compared to the lifecycle-methods of Class Components.
 
